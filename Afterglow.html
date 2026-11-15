@@ -593,7 +593,7 @@ async function start(){
  try{
   if(!reduceMotion)departure=captureDeparture();
   const brand=$('brandHome').getBoundingClientRect();
-  startImmediate();state='arrival';arrivalHeldAt=Date.now();arrivalHeldPerf=performance.now();controls();
+  startImmediate();state='arrival';arrivalHeldAt=Date.now();arrivalHeldPerf=performance.now();controls();$('phase').textContent='CONNECTING';$('clock').textContent='—';
   app.classList.remove('surface-enter');$('gameView').classList.remove('surface-enter');document.body.classList.add('arriving');app.inert=true;
   const target=sourceLanding(),durationMs=1180;
   const animate=(el,frames,options)=>{if(reduceMotion||!el)return Promise.resolve();const a=el.animate(frames,options);animations.push(a);return a.finished.catch(()=>{})};
