@@ -495,7 +495,7 @@ function fitBoard(){
 }
 function setView(view){
  const old=document.body.classList.contains('in-game');
- baseSetView(view);document.body.classList.toggle('in-game',view==='game');
+ baseSetView(view);document.body.classList.toggle('in-game',view==='game');$('accountButton').hidden=view!=='home';
  if(view==='game'){document.querySelector('.app-header').prepend(metricsNode)}else{metricsParent.append(metricsNode)}
  fitBoard();if(old!==(view==='game')){let el=$(view==='game'?'gameView':'homeView');el.classList.remove('surface-enter');void el.offsetWidth;el.classList.add('surface-enter');window.scrollTo(0,0)}
 }
